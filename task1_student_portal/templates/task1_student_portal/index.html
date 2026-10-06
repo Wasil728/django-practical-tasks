@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Portal</title>
+</head>
+<body>
+    <h1>Student Result Portal</h1>
+    
+    <h2>Student: {{ student_name }}</h2>
+    
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>Subject</th>
+            <th>Marks</th>
+        </tr>
+        {% for subject, mark in marks.items %}
+        <tr>
+            <td>{{ subject }}</td>
+            <td>{{ mark }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+    <br>
+    <p><b>Total Marks:</b> {{ total }} / 500</p>
+    <p><b>Percentage:</b> {{ percentage }}%</p>
+    
+    <p><b>Status:</b> 
+        {% if percentage >= 40 %}
+            <span style="color: green;">Pass</span>
+        {% else %}
+            <span style="color: red;">Fail</span>
+        {% endif %}
+    </p>
+
+</body>
+</html>
